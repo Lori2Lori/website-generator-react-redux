@@ -1,0 +1,16 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "develop": "mkdir -p build && watchify --debug --entry index.js -o build/compiled.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dorota Cieslinska",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "watchify": "^3.7.0"
+  }
+}
