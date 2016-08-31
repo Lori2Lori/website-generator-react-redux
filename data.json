@@ -1,31 +1,30 @@
-{
-  "name" : "Dorota Cieślińska",
-  "phone": "+31 623951315",
-  "email": "cieslinska.dorota@gmail.com",
-  "jobs" : [
-    {
-      "title" : "Web developer",
-      "client": "Lionbridge",
-      "start" : "2015-07-01",
-      "end"   : "2015-09-31",
-      "description": "Developing and maintaining software tools used in translation process.",
-      "experiences": [
-        "web development",
-        "user interface development",
-        "reverse engineering",
-        "quality assurance"
+{ "name" : "Dorota Cieślińska"
+, "contact":
+  { "phone": "+31 623951315"
+  , "email": "cieslinska.dorota@gmail.com"
+  }
+, "jobs" :
+  [ { "title" : "Web developer"
+    , "client": "Lionbridge"
+    , "start" : "2015-07-01"
+    , "end"   : "2015-09-31"
+    , "description": "Developing and maintaining software tools used in translation process."
+    , "experiences":
+      [ "web development"
+      , "user interface development"
+      , "reverse engineering"
+      , "quality assurance"
       ]
-    },
-    {
-      "title" : "Inspector",
-      "client": "Building Supervision",
-      "start" : "2010-04-01",
-      "end"   : "2014-06-31",
-      "description": "Blalblabl blablalala.",
-      "experiences": [
-        "law",
-        "building supervision",
-        "project management",
+    }
+  , { "title" : "Inspector"
+    , "client": "Building Supervision"
+    , "start" : "2010-04-01"
+    , "end"   : "2014-06-31"
+    , "description": "Blalblabl blablalala."
+    , "experiences":
+      [ "law"
+      , "building supervision"
+      , "project management"
       ]
     }
   ]

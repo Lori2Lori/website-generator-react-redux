@@ -5,12 +5,21 @@
   "main": "index.js",
   "scripts": {
     "develop": "mkdir -p build && watchify --debug --entry index.js -o build/compiled.js",
+    "prepublish": "mkdir -p build && cp index.html build && browserify -t [ babelify --presets [ es2015 ] ] -t uglifyify --entry index.js -o build/compiled.js",
+    "deploy": "ns build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dorota Cieslinska",
   "license": "ISC",
   "devDependencies": {
+    "babelify": "^7.3.0",
     "browserify": "^13.1.0",
+    "uglifyify": "^3.0.2",
     "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-hyperscript": "^2.4.1"
   }
 }
