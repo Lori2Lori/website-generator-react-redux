@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "develop": "mkdir -p build && watchify --debug --entry index.js -o build/compiled.js",
-    "prepublish": "mkdir -p build && cp index.html build && browserify -t [ babelify --presets [ es2015 ] ] -t uglifyify --entry index.js -o build/compiled.js",
-    "deploy": "ns build",
+    "develop": "mkdir -p build && watchify --debug --entry src/index.js -o build/compiled.js",
+    "prepublish": "mkdir -p build && cp src/index.html build && browserify -t [ babelify --presets [ es2015 ] ] -t uglifyify --entry src/index.js -o build/compiled.js",
+    "deploy": "npm run prepublish && ns build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dorota Cieslinska",

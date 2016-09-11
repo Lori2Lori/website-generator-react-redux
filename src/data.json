@@ -17,7 +17,7 @@
       ]
     }
   , { "title" : "Inspector"
-    , "client": "Building Supervision"
+    , "client": "Building Supervision Bureau"
     , "start" : "2010-04-01"
     , "end"   : "2014-06-31"
     , "description": "Blalblabl blablalala."
@@ -25,6 +25,16 @@
       [ "law"
       , "building supervision"
       , "project management"
+      ]
+    }
+  , { "title" : "Web reasercher"
+    , "client": "Vacancysoft LLP"
+    , "start" : "2011-04-01"
+    , "end"   : "2012-03-31"
+    , "description": "Worldwide research of vacancies"
+    , "experiences":
+      [ "research"
+      , "web development"
       ]
     }
   ]
