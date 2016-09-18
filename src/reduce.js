@@ -14,23 +14,60 @@ const input =
   ]
 
 const expected =
-  { "e1": ["A", "B"]
-  , "e2": ["A", "B", "C"]
-  , "e3": ["A", "C"]
+  { "e1":
+    [ {
+        name: "A",
+        experiences: ["e1", "e2", "e3"]
+      }
+    , {
+        name: "B",
+        experiences: ["e1", "e2"]
+      }
+    ]
+  , "e2":
+    [ {
+        name: "A",
+        experiences: ["e1", "e2", "e3"]
+      }
+    , {
+        name: "B",
+        experiences: ["e1", "e2"]
+      }
+    , {
+        name: "C",
+        experiences: ["e2", "e3"]
+      }
+    ]
+  , "e3":
+    [ {
+        name: "A",
+        experiences: ["e1", "e2", "e3"]
+      }
+    , {
+        name: "C",
+        experiences: ["e2", "e3"]
+      }
+    ]
   }
 
-const reducer = (previous, current) => {
-  Object.defineProperty(previous, current.experiences, current);
-  console.log("this is " + previous);
-  return previous
+const reducer = (memo, job) => {
+  for (e of job.experiences ) {
+    if (typeof memo[e] !== 'undefined') {
+      memo[e] = memo[e].concat(job)
+    } else {
+      memo[e] = [job]
+    }
+  }
+  return memo
 }
 
 const output = input.reduce(reducer, {})
 
 if (JSON.stringify(output) !== JSON.stringify(expected)) {
-  console.error ("Źle ☠️")
+  console.error ("Bad ☠️")
   console.log(JSON.stringify({expected, output}, null, 2));
 }
 else {
-  console.log("Dobrze");
+  console.log("OK 😽");
+  console.log(JSON.stringify({output}, null, 2));
 }

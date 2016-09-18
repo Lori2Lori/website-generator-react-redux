@@ -5,10 +5,20 @@ const h = require('react-hyperscript');
 
 const ContactView = require('./contact-view');
 const JobView = require('./job-view');
-
+const JobsByExperienceView = require('./jobs-by-experience-view');
 
 const root = document.getElementById('root');
 
+const reducer = (memo, job) => {
+  for (e of job.experiences ) {
+    if (typeof memo[e] !== 'undefined') {
+      memo[e] = memo[e].concat(job)
+    } else {
+      memo[e] = [job]
+    }
+  }
+  return memo
+}
 
 const CvView = () => {
   return (
@@ -25,6 +35,13 @@ const CvView = () => {
             return h(JobView, job)
           }
         )
+      ),
+      h(
+        'div.experience', [
+          h(
+            JobsByExperienceView, {jobs: data.jobs.reduce(reducer, {})}
+          )
+        ]
       ),
       h(
         'pre',
