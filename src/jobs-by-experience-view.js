@@ -1,23 +1,23 @@
 const h = require('react-hyperscript');
+const JobView = require('./job-view');
 
-const JobsByExperienceView = (
-    {jobs}
-    // { title
-    // , client
-    // , start
-    // , end
-    // , description
-    // , experiences
-    // }
-  ) => {
+
+
+const JobsByExperienceView = ({jobs}) => {
+
     return h('div', [
       h('h2', 'This is experience view'),
-      h('pre', JSON.stringify(jobs, null, 2))
-      // h('ul',
-      //   experiences.map((experience) => {
-      //     return h('li', experience)
-      //   })
-      // )
+      h('ul',
+        Object.keys(jobs).map((experience) => {
+          return h('li', [
+            h('h3', experience),
+            h('ul', jobs[experience].map((job) => {
+                return h(JobView, job)
+              })
+            )
+          ])
+        })
+      )
     ])
   }
 
