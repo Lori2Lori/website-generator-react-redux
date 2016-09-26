@@ -9,6 +9,12 @@ const JobsByExperienceView = require('./jobs-by-experience-view');
 
 const root = document.getElementById('root');
 
+const styles = {
+  main :
+    { outline: " 1px solid red"
+    }
+}
+
 const reducer = (memo, job) => {
   for (e of job.experiences ) {
     if (typeof memo[e] !== 'undefined') {
@@ -22,7 +28,7 @@ const reducer = (memo, job) => {
 
 const CvView = () => {
   return (
-    h('main', [
+    h('main', {style: styles.main}, [
       h(
         'h1',
         data.name
@@ -42,11 +48,12 @@ const CvView = () => {
             JobsByExperienceView, {jobs: data.jobs.reduce(reducer, {})}
           )
         ]
-      ),
-      h(
-        'pre',
-        JSON.stringify(data, null, 2)
       )
+      ,
+      // h(
+      //   'pre',
+      //   JSON.stringify(data, null, 2)
+      // )
     ])
   )
 }
